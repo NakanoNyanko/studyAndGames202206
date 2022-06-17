@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #contents{
+            display: grid;
+            grid-template-columns: 64px 64px 64px 64px 64px;
+        }
+        .inu{
+            width: 64px;
+            height: 64px;
+            font-size: 3em;
+        }
+    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+
+
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/cat-solid.svg" alt="" width="64" height="64">
+    <img src="images/dog-solid.svg" alt="" width="64" height="64">
+    <div id="contents">
+
+    </div>
+
+    <!-- script -->
+    <script>
+        for (i = 0; i < 25; i++){
+            const __inu__ = document.createElement('div');
+            __inu__.setAttribute('class', 'inu');
+            const __ico__ = document.createElement('img');
+            __ico__.src = "images/dog-solid.svg";
+            __inu__.textContent = "";
+            __inu__.append(__ico__);
+            document.querySelector('#contents').prepend(__inu__);
+        }
+        const innu = document.getElementsByClassName('inu');
+        for(let i = 0; i < innu.length; i++){
+            innu[i].addEventListener('click', (neko) =>{
+            const __ico__ = document.createElement('img');
+            innu[i].textContent = "〇";
+            console.log(i);
+                if (i + 1 % 5 !== 1 || i + 1 % 5 !== 0){
+                    for( j = 4; j > 1; j--){
+                        if(i + j < innu.length && innu[i + j].textContent === '〇') { innu[i + j - 1].textContent = "〇"; }
+                        if(i - j > 0 && innu[i - j].textContent === '〇') { innu[i - (j - 1)].textContent = "〇"; }
+                    }
+                }
+                    if(i + 10 < innu.length && innu[i + 10].textContent === '〇') { innu[i + 5].textContent = "〇"; }
+                    if(i - 10 > 0 && innu[i - 10].textContent === '〇') { innu[i - 5].textContent = "〇"; }
+            });
+        }
+        
+    </script>
+</body>
+</html>

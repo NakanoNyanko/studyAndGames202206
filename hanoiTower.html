@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <style>
+            #test{
+                background-image: linear-gradient(168deg, #fff 30%, #ccc 30%, #ccc 50%, #fff 50%, #ccc 80%, #fff 80%, #ccc 100%, #fff 100%);             
+                background-image: linear-gradient(92deg, lime, lightyellow);
+                background-image: linear-gradient(transparent 50%, lime, lightyellow);
+                background-size: 12px 12px;
+                
+            }
+            #test h2{
+
+            }
+            #gameArea{
+                width: 640px;
+                height: 480px;
+                /* background-image: linear-gradient(220deg, yellow, green, blue); */
+                background-image: radial-gradient(yellow, lime, green, skyblue, blue, purple, red, orange);
+                background-size: 16px 16px;
+                padding-top: 10px;
+                display: grid;
+                grid-template-columns: 200px 200px 200px;
+            }
+            .tower_block{
+                background-image: url(images/hanoi_tower.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 180px;
+                height: 360px;
+                margin: 10px;
+                text-align: center;
+            }
+            .disc{
+                margin: 64px 0 64px 0;
+            }
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ハワイの塔</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <div id="test">
+                    <h1>
+                        ハワイの塔
+                    </h1>
+                </div>
+                <nav>
+                    
+                </nav>
+                <hr>
+            </div>    
+        </header>
+        <div id="gameArea">
+            <div class="tower_block">
+                <div id="disc_0_0" class="disc">あああ</div>
+                <div id="disc_0_1" class="disc">あああ</div>
+                <div id="disc_0_2" class="disc">あああ</div>
+            </div>
+            <div class="tower_block">
+                <div id="disc_1_0" class="disc"></div>
+                <div id="disc_1_1" class="disc"></div>
+                <div id="disc_1_2" class="disc"></div>
+            </div>
+            <div class="tower_block">
+                <div id="disc_2_0" class="disc"></div>
+                <div id="disc_2_1" class="disc"></div>
+                <div id="disc_2_2" class="disc"></div>
+            </div>
+        </div>
+    </body>
+</html>

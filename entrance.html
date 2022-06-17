@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Entrance</title>
+</head>
+<body>
+    
+    <div id="contents">
+        <div class="kobun">
+            こぶん
+        </div>
+        <div class="kobun">
+            おやぶん
+        </div>
+        <div class="kobun">
+            師匠
+        </div>
+
+    </div>
+
+    <script>
+        console.log('P176ページ')
+        setTimeout( function(){
+            setBodyText('こんにちわ');
+        }, 1000);
+        setTimeout( () => {
+            
+            setBodyText('こんにちわわ');
+        }
+        , 1500);
+
+        var nList = document.getElementsByClassName("kobun");
+        const aaa = nList.map();
+        console.log(aaa[0])
+        classTextGetter("kobun");
+
+
+        function setBodyText(e) {
+            let ee = document.createElement('div');
+            ee.textContent = e;
+            ee.style.fontSize = "5em";
+            ee.style.backgroundColor = "red";
+            setTimeout(() =>{ee.style.backgroundColor = "blue"; setTimeout(() =>{ee.style.backgroundColor = null;}, 1000)}, 2000);
+            ee.setAttribute('class', 'new');
+            document.querySelector('body').append(ee);
+            console.log('setBodyTextちゃん：' + e);
+        };
+
+
+
+        function classTextGetter(claName){
+            var nList = document.getElementsByClassName(claName);
+            for (i = 0; i < nList.length; i++){
+                let ee = document.createElement('div');
+                ee.textContent = nList[i].textContent;
+                ee.style.fontSize = "5em";
+                ee.setAttribute('class', 'new');
+                document.querySelector('body').append(ee);
+                console.log('setBodyTextちゃん：' + nList[i].textContent);
+            }
+        }
+
+
+    </script>
+</body>
+</html>

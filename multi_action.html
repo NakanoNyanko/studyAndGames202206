@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>このようそのいろかが変わります</div>
+    <button id="color">文字の変更</button>
+    <button id="bg_color">背景変更</button>
+    <button id="all-color">文字と背景色変更</button>
+    <button id="reset-color">リセット</button>
+        <!-- crash script -->
+        <script src="js/crazy.js"></script>
+    <script>
+        const targetE1 = document.querySelector("div");
+        const colorBtn = document.querySelector("#color");
+        const bgColorBtn = document.querySelector("#bg_color");
+        const allColorBtn = document.querySelector("#all-color");
+        const resetBtn = document.querySelector("#reset-color");
+
+        colorChange = (e) => {
+            targetE1.style.color = "#ff0000";
+        }
+
+        bgColorChange = eve => {
+            targetE1.style.backgroundColor = "blue";
+        }
+        function reset(event) {
+            targetE1.style.backgroundColor = "";
+            targetE1.style.color = "";
+        }
+
+        colorBtn.addEventListener("click", colorChange);
+        bgColorBtn.addEventListener("click", bgColorChange);
+        allColorBtn.addEventListener("click", colorChange);
+        allColorBtn.addEventListener("click", bgColorChange);
+        resetBtn.addEventListener("click", reset);
+    </script>
+</body>
+</html>
